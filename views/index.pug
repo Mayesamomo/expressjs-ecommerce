@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  section.hero
+    h1 Welcome to Coffee Menu
+    p Discover our amazing selection of coffee items.
+
+  section.menu-items
+    h2 All Menu Items
+
+    ul
+      each menuItem in menu
+        li
+          .menu-item
+            img(src=menuItem.image, alt=menuItem.name)
+            h3= menuItem.name
+            p= menuItem.description
+            p.price= `$${menuItem.price.toFixed(2)}`
+            a(href=`/menu/${menuItem._id}`) View Details

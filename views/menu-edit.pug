@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+  section.form-section
+    h2 Edit Menu Item
+
+    form(action=`/menu/edit/${menuItem._id}`, method='post')
+      div.form-field
+        label(for='name') Name:
+        input(type='text', id='name', name='name', value=menuItem.name, required)
+
+      div.form-field
+        label(for='description') Description:
+        textarea(id='description', name='description', required)= menuItem.description
+
+      div.form-field
+        label(for='price') Price:
+        input(type='number', id='price', name='price', step='0.01', value=menuItem.price, required)
+
+      div.form-field
+        label(for='image') Image URL:
+        input(type='text', id='image', name='image', value=menuItem.image, required)
+
+      div.form-field
+        button(type='submit') Update Menu Item

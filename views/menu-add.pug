@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+  section.form-section
+    h2 Add New Menu Item
+
+    form(action='/menu/add', method='post')
+      div.form-field
+        label(for='name') Name:
+        input(type='text', id='name', name='name', required)
+
+      div.form-field
+        label(for='description') Description:
+        textarea(id='description', name='description', required)
+
+      div.form-field
+        label(for='price') Price:
+        input(type='number', id='price', name='price', step='0.01', required)
+
+      div.form-field
+        label(for='image') Image URL:
+        input(type='text', id='image', name='image', required)
+
+      div.form-field
+        button(type='submit') Add Menu Item

@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  section.menu-details
+    h2= menuItem.name
+
+    div.menu-item-details
+      img(src=menuItem.image, alt=menuItem.name)
+      p= menuItem.description
+      p.price= `$${menuItem.price.toFixed(2)}`
+      
+    div.menu-item-actions
+      a.edit-btn(href=`/menu/edit/${menuItem._id}`) Edit
+      form(action=`/menu/delete/${menuItem._id}`, method='POST')
+        button.delete-btn(type='submit') Delete
+      a.back-btn(href='/') Back to Menu

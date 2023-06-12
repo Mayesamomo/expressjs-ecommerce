@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  section.contact
+    h2 Contact Us
+    p If you have any questions or inquiries, feel free to contact us using the form below.
+    form(action='/contact/submit' method='post')
+      label(for='name') Name:
+      input(type='text' id='name' name='name' required)
+      br
+      label(for='email') Email:
+      input(type='email' id='email' name='email' required)
+      br
+      label(for='message') Message:
+      textarea(id='message' name='message' required)
+      br
+      button(type='submit') Send Message
